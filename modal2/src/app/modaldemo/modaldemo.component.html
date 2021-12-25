@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2 style="text-align: center;">Example of Ngx-Bootstrap Modal</h2>
+<div style="width: fit-content;margin: auto;margin-top: 18px;">
+    <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)"><i class="fa fa-plus"></i> Add
+        New Service</button>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">ADD New Service</h5>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-row justify-content-center align-items-center text-center text-white p-4 ">
+            <div class="p-4 bg-danger hover-item">
+                <i class="fa fa-motorcycle fa-2x d-block "></i>Bike
+            </div>
+            <div class="p-4 bg-danger hover-item">
+                <i class="fa fa-car fa-2x d-block"></i>Car
+            </div>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="p-1">
+                <label>service:</label>
+                <select class="custom-select custom-select-sm width-auto" style="width:auto;">
+                    <option selected>Open this select menu</option>
+                    <option value="1">interior</option>
+                    <option value="2">Exterior</option>
+                </select>
+            </div>
+            <div class="p-1">
+                <label>slots</label>
+                <input type="text" name="slots" />
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm">ADD</button>
+        <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+    </div>
+</ng-template>
